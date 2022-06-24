@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+        integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Email Footer</title>
 </head>
 
@@ -16,311 +19,7 @@
 
 
 
-        <div id="footer-wraper" style="max-width:700px ;">
-            <!-- <style>
-                .formboi {
-
-                    margin-bottom: 20px;
-                }
-
-                .formboi label {
-                    padding-top: 1em;
-                }
-
-                .formboi button {
-                    padding: 0.5em;
-                    margin-top: 1em;
-                }
-            </style>
-            <table id="footer-table" style=" font-family: 'Open Sans', sans-serif;
-                    background: url(https://github.com/meldweare/vividedge-res/blob/main/BG-01.jpg?raw=true);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-               
-                   
-                    color: #ffffff;
-                    padding: 1em;
-                    width: 100%;
-                    table-layout: fixed;
-
-                  
-                    text-align: left;
-                
-                    ">
-                <tbody>
-                    <style>
-                        @media only screen and (max-width: 800px) {
-                            .mob-only {
-                                display: block;
-                            }
-
-                            .desk-only {
-                                display: none;
-                            }
-                        }
-
-                        @media only screen and (min-width: 800px) {
-
-                            .mob-only {
-                                display: none;
-                            }
-                        }
-
-                        .gt a {
-
-                            color: #ffffff;
-                        }
-
-
-                        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
-                        @font-face {
-                            font-family: Clio;
-                            src: url("https://exw.f21.myftpupload.com/vfonts/ClioRegular.otf") format("opentype");
-                            font-weight: normal;
-                        }
-
-
-
-                        @font-face {
-                            font-family: Clio;
-                            src: url("https://exw.f21.myftpupload.com/vfonts/ClioMedium-Medium.otf") format("opentype");
-                            font-weight: 500;
-                        }
-                    </style>
-                    <tr>
-                        <td style="width: 40%;">
-                           
-
-
-                            <div style="text-align: center;">
-                                <a href="https://www.vivid-edge.com/" target="_blank">
-                                    <img src="https://raw.githubusercontent.com/meldweare/vividedge-res/main/Logo.png"
-                                        id="logo" alt="logo" style="width: 100%;  max-width: 360px; min-width: none;">
-                                </a>
-                            </div>
-
-                            <div id="web_link" style=" 
-                            text-align: left;
-                            text-decoration: none !important;
-                            font-size: 100%;
-                            font-weight: 800;
-                            line-height: .3;
-                            margin-top: 1em;
-                            margin-left: 0.5em;
-                            ">
-                                <p style="font-size: 75%;font-weight: 700;">VISIT US</p>
-                                <a href="https://www.vivid-edge.com/" target="_blank"
-                                    style="color: white; line-height: 1; ">www.vivid-edge.com</a>
-                            </div>
-
-
-
-                        </td>
-                        <td class="desk-only">
-                            <div style="margin-left: 2.5em;margin-top: 1.0em;">
-                                <span id="e_name"
-                                    style="font-size: 160%;font-weight: 500;line-height: 1; font-family: Clio , sans-serif;"
-                                    x-text="name"> Bhaskar
-                                    Dasari
-                                </span>
-                                <br />
-                                <span id="e_role"
-                                    style="font-weight: 300; font-size: 90%; text-transform: uppercase; font-family: Clio;"
-                                    x-text="role">BUSINESS TRANSFORMATION ADVISOR
-                                </span>
-
-                                <div class="cf" style=" padding-top: 1.25em;font-size: 85%; line-height: 2.5;">
-
-
-                                    <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Phone.png?raw=true"
-                                        alt="" style="max-width: 2em;
-                                vertical-align: middle;
-                               ">
-                                    <span style="margin-left:6px ;" x-text="phone"> 770-335-5265(c) |
-                                        703-229-8658(f)</span>
-
-                                    <br />
-                                    <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Email.png?raw=true"
-                                        alt="" style="max-width: 2em;
-                                vertical-align: middle;
-                               ">
-                                 
-                                    <a x-bind:href="'mailto:' + email"
-                                        style="margin-left:6px;text-decoration:none; color:#ffffff;"
-                                        x-text="email">bdasari@vivid-edge.com</a>
-                                    <br>
-                                    <div style="display: flex;">
-                                        <div style="width:fit-content"> <img
-                                                src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Location.png?raw=true"
-                                                alt="" style="max-width: 2em;
-                            vertical-align: middle;"></div>
-
-                                        <p
-                                            style="margin-left:8px ;margin-top: 6px; line-height: 1.2;padding-right: 1em;">
-                                            11710 Plaza
-                                            America Drive STE 2000 Reston, VA – 20190 </p>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table> -->
-
-
-            <!-- New World -->
-            <p>-</p>
-            <div style="margin-top:1em; margin-bottom:2em;font-family: 'Open Sans', sans-serif;
-                background: url(https://raw.githubusercontent.com/meldweare/vividedge-res/main/es_bg-1.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-            
-                max-width: 800px;
-                color: #ffffff;
-
-                padding-top: 2em; padding-bottom:2em" class="new_wrap">
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
-                    @font-face {
-                        font-family: Clio;
-                        src: url("https://exw.f21.myftpupload.com/vfonts/ClioRegular.otf") format("opentype");
-                        font-weight: normal;
-                    }
-
-
-
-                    @font-face {
-                        font-family: Clio;
-                        src: url("https://exw.f21.myftpupload.com/vfonts/ClioMedium-Medium.otf") format("opentype");
-                        font-weight: 500;
-                    }
-
-
-
-                    @font-face {
-                        font-family: Clio;
-                        src: url("https://exw.f21.myftpupload.com/vfonts/ClioSemiBold-SemiBold.otf") format("opentype");
-                        font-weight: 600;
-                    }
-                </style>
-
-                <div class="col-2" style=" float: left;width: 55%; margin-bottom:2em;margin-top: 1em; ">
-                    <p id="e_name"
-                        style="font-size: 1.8rem;font-weight: 600;line-height: 1; margin:0; margin-left: 3rem; font-family: Clio , sans-serif;text-align: left"
-                        x-text="name"> Bhaskar
-                        Dasari
-                </p>
-                    
-                    <p id="e_role" style="font-weight: 300; font-size: 0.75rem; margin-top:.5em;margin-left: 3rem; text-transform: uppercase;text-align: left;"
-                        x-text="role">BUSINESS TRANSFORMATION ADVISOR
-            </p>
-
-                    <a href="https://www.vivid-edge.com/" target="_blank">
-                        <img src="https://raw.githubusercontent.com/meldweare/vividedge-res/main/Logo.png" id="logo"
-                            alt="logo" style="width: 100%;  max-width: 280px; padding-left: 3rem;">
-                    </a>
-                    <!-- <div id="web_link" style=" 
-
-                    text-decoration: none !important;
-                    font-size: 100%;
-                    font-weight: 800;
-                    line-height: .3;
-                    margin-top: 0em;
-                    margin-left: 3.5em;
-                    ">
-               
-                        <a href="https://www.vivid-edge.com/" target="_blank"
-                            style="color: white; line-height: 1; ">www.vivid-edge.com</a>
-                    </div> -->
-
-                </div>
-
-                <div class="col-1" style="padding: 0 3em;">
-                    <div style="margin-top: 1.0em;margin-left: 0.5em;">
-                        <!-- <span id="e_name"
-                            style="font-size: 1.8rem;font-weight: 600;line-height: 1; font-family: Clio , sans-serif;"
-                            x-text="name"> Bhaskar
-                            Dasari
-                        </span>
-                        <br /> -->
-                        <!-- <span id="e_role" style="font-weight: 300; font-size: 0.75rem; text-transform: uppercase;"
-                            x-text="role">BUSINESS TRANSFORMATION ADVISOR
-                        </span> -->
-
-                        <div class="cf" style=" font-size: 0.85rem; line-height: 2.5;">
-
-
-                            <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Phone.png?raw=true"
-                                alt="" style="max-width: 2em;
-                                    vertical-align: middle; ">
-                            <span style="margin-left:6px ;" x-text="phone"> 770-335-5265(c) |
-                                703-229-8658(f)</span>
-
-                            <br />
-                            <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Email.png?raw=true"
-                                alt="" style="max-width: 2em;
-                                vertical-align: middle;">
-                            <!-- <a rel="nofollow" style="text-decoration:none; color:#ffffff;" x-text="email">bdasari@vivid-edge.com</a> -->
-                            <a x-bind:href="'mailto:' + email"
-                                style="margin-left:6px;text-decoration:none; color:#ffffff;"
-                                x-text="email">bdasari@vivid-edge.com</a>
-                            <br>
-
-                            <span x-show="fax">
-                                <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Fax.png?raw=true"
-                                    alt="" style="max-width: 2em;
-                                vertical-align: middle;  ">
-                                <span style="margin-left:6px ;" x-text="fax"> 770-335-5265(c) |
-                                    703-229-8658(f)</span>
-
-                                <br />
-                            </span>
-
-                            <div style="display: flex;">
-                                <div style="width:fit-content"> <img
-                                        src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Location.png?raw=true"
-                                        alt="" style="max-width: 2em;
-                                        vertical-align: middle;">
-                                </div>
-
-                                <p style="margin-left:8px ;margin-top: 6px; line-height: 1.2;padding-right: 2em; margin-bottom: 0;">
-                                    11710 Plaza
-                                    America Drive STE 2000 Reston, VA – 20190 </p>
-                            </div>
-
-                            
-                            <span>
-                                <img src="https://github.com/meldweare/vividedge-res/blob/main/Icons/Website.png?raw=true"
-                                    alt="" style="max-width: 2em;
-                                vertical-align: middle;  ">
-                                <span style="margin-left:6px ;">
-                                    <a href="https://www.vivid-edge.com/" target="_blank"
-                                        style="color: white; text-decoration: none; ">www.vivid-edge.com</a></span>
-
-                                <br />
-                            </span>
-
-                        </div>
-
-
-
-
-                    </div>
-
-                </div>
-
-
-
-
-            </div>
-            <p>-</p>
-
-        </div>
+      
 
         <div class="formboi" id="formz">
             <style>
@@ -331,49 +30,115 @@
                     margin-left: 2em;
                     font-family: 'Open Sans', sans-serif;
                     width: 30%;
+                    margin-bottom: 2em;
                 }
             </style>
 
 
             <label for="name">Name</label>
-            <input type="text" name="name" id="em_name" x-model="name" size="20">
+            <input type="text" name="name" id="em_name" x-model="name" size="20" @input="generateFooter($data)">
 
             <label for="role">Designation</label>
-            <input type="text" name="role" id="em_role" x-model="role">
+            <input type="text" name="role" id="em_role" x-model="role" @input="generateFooter($data)">
 
             <label for="phone">Contact Number</label>
-            <input type="text" name="phone" id="em_phone" x-model="phone">
+            <input type="text" name="phone" id="em_phone" x-model="phone" @input="generateFooter($data)">
 
             <label for="email">Email</label>
-            <input type="email" name="email" id="em_email" x-model="email">
+            <input type="email" name="email" id="em_email" x-model="email" @input="generateFooter($data)">
 
 
-            <!-- <label for="fax">Fax</label>
-            <input type="fax" name="fax" id="em_fax" x-model="fax"> -->
 
-            <!-- <label for="addy">Address</label>
-            <input type="text" name="addy" id="em_addy" x-model="addy"> -->
-
-
-            <!-- 
-            <button @click='copyFooter()'>Select Email Signature</button> -->
+            <button style="margin-top: 12px;" @click="downloadFooter()">Download</button>
 
 
         </div>
     </div>
 
     <script>
+        let bg, phone, web, email, addy, logo;
+        let opsans, cb, csb, cr;
 
-        function copyFooter() {
-            let copyText = document.getElementById("footer-wraper");
-            let range = document.createRange();
+        let Erole = "Role";
+        let Ename = "Name";
+        let num = "12345678910";
+        let emailId = "email@vivid-edge.com"
 
-            window.getSelection().removeAllRanges();
-            range.selectNode(copyText);
-            window.getSelection().addRange(range);
 
-            console.log(range);
 
+
+
+        function generateFooter({ name, email, role, phone }) {
+
+            Erole = role.toUpperCase();
+            Ename = name;
+            num = phone;
+            emailId = email;
+            console.log(name);
+            redraw();
+        }
+
+        function preload() {
+            bg = loadImage('./res/es_bg-1.jpg');
+            phone = loadImage('./res/Icons/Phone.png');
+            email = loadImage('./res/Icons/Email.png');
+            addy = loadImage('./res/Icons/Location.png');
+            web = loadImage('./res/Icons/Website.png');
+            logo = loadImage('./res/Logo.png');
+
+            cb = loadFont('./res/cb.otf');
+            csb = loadFont('./res/csb.otf');
+            cr = loadFont('./res/cr.otf');
+            opsans = loadFont('./res/os.ttf')
+
+
+        }
+
+        function setup() {
+            // setAttributes('antialias', true);
+            let canvas = createCanvas(700, 260);
+        }
+
+        // VALUES
+        const adpos = 153;
+        const opSize = 14;
+        const iPos = 380;
+        const dPos = iPos + 40;
+        const tPos = 90;
+
+
+        function downloadFooter() {
+
+            saveCanvas(canvas, Ename + ' VEC_footer', 'jpg');
+
+        }
+
+
+        function draw() {
+          
+            // translate(-width/2,-height/2);
+            image(bg, 0, 0, 900, 262);
+            image(phone, iPos, 60, 30, 30);
+            image(email, iPos, 100, 30, 30);
+            image(addy, iPos, 140, 30, 30);
+            image(web, iPos, 180, 30, 30);
+            image(logo, 30, 150, 280, 76);
+
+            fill(255);
+
+            textFont(opsans, 14);
+            text(num, dPos, 80);
+            text(emailId, dPos, 120);
+            text("11710 Plaza America Drive STE", dPos, adpos);
+            text("2000 Reston, VA – 20190", dPos, adpos + opSize);
+            text("www.vivid-edge.com", dPos, 200);
+
+            textFont(csb, 32);
+            text(Ename, 32, tPos);
+
+            textFont(cr, 14);
+            text(Erole, 32, tPos + 24);
+            noLoop();
         }
 
 
