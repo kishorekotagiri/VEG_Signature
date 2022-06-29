@@ -19,7 +19,7 @@
 
 
 
-      
+
 
         <div class="formboi" id="formz">
             <style>
@@ -32,24 +32,29 @@
                     align-items: center;
                     width: 100%;
                     margin-bottom: 2em;
-                    margin-top:3em;
+                    margin-top: 3em;
+                
                 }
+
                 .formboi input {
                     margin-bottom: 1.4em;
-                    padding: 4px 2px  ;
+                    padding: 4px 2px;
                 }
+
                 .formboi label {
-                  
-                    margin-bottom:0.2em ;
+
+                    margin-bottom: 0.2em;
                 }
+
                 .formboi button {
 
                     color: white;
                     background-color: #160B8B;
                     padding: 12px 22px;
-                    border-radius:12px ;
+                    border-radius: 12px;
                     border: none;
                 }
+
                 canvas {
                     display: flex;
                     align-items: center;
@@ -57,33 +62,33 @@
                     margin: auto;
                 }
             </style>
+           
+
+                <label for="name">Name</label>
+                <input type="text" name="name" id="em_name" x-model="name" size="40" @input="generateFooter($data)">
+
+                <label for="role">Designation</label>
+                <input type="text" name="role" id="em_role" x-model="role" size="40" @input="generateFooter($data)">
+
+                <label for="phone">Contact Number</label>
+                <input type="text" name="phone" id="em_phone" x-model="phone" size="40" @input="generateFooter($data)">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="em_email" x-model="email" size="40" @input="generateFooter($data)">
 
 
-            <label for="name">Name</label>
-            <input type="text" name="name" id="em_name" x-model="name" size="40" @input="generateFooter($data)">
 
-            <label for="role">Designation</label>
-            <input type="text" name="role" id="em_role" x-model="role"   size="40" @input="generateFooter($data)">
-
-            <label for="phone">Contact Number</label>
-            <input type="text" name="phone" id="em_phone" x-model="phone"  size="40"  @input="generateFooter($data)">
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="em_email" x-model="email"  size="40"  @input="generateFooter($data)">
-
-
-
-            <button style="margin-top: 12px;" @click="downloadFooter()">Download</button>
-
-
+                <button style="margin-top: 12px;" @click="downloadFooter()">Download</button>
+            
         </div>
     </div>
 
     <script>
-        let bg, phone, web, email, addy, logo;
+        let bg, phone, web, email, addy, logo, fax;
         let opsans, cb, csb, cr;
 
-        let Erole = "Role";
+        let Erole = "DESIGNATION";
+        let faxNum = "703-229-8658 (FAX)";
         let Ename = "Name";
         let num = "12345678910";
         let emailId = "email@vivid-edge.com"
@@ -108,6 +113,7 @@
             email = loadImage('./res/Icons/Email.png');
             addy = loadImage('./res/Icons/Location.png');
             web = loadImage('./res/Icons/Website.png');
+            fax = loadImage('./res/Icons/Fax.png');
             logo = loadImage('./res/Logo.png');
 
             cb = loadFont('./res/cb.otf');
@@ -124,11 +130,12 @@
         }
 
         // VALUES
-        const adpos = 153;
+        const adpos = 175;
         const opSize = 14;
         const iPos = 380;
+        const iPosY = 40;
         const dPos = iPos + 40;
-        const tPos = 90;
+        const tPos = 70;
 
 
         function downloadFooter() {
@@ -139,28 +146,30 @@
 
 
         function draw() {
-          
+
             // translate(-width/2,-height/2);
             image(bg, 0, 0, 900, 262);
-            image(phone, iPos, 60, 30, 30);
-            image(email, iPos, 100, 30, 30);
-            image(addy, iPos, 140, 30, 30);
-            image(web, iPos, 180, 30, 30);
+            image(phone, iPos, iPosY, 30, 30);
+            image(email, iPos, iPosY + 40, 30, 30);
+            image(fax, iPos, iPosY + 40 * 2, 30, 30);
+            image(addy, iPos, iPosY + 40 * 3, 30, 30);
+            image(web, iPos, iPosY + 40 * 4, 30, 30);
             image(logo, 30, 150, 280, 76);
 
             fill(255);
 
             textFont(opsans, 14);
-            text(num, dPos, 80);
-            text(emailId, dPos, 120);
+            text(num, dPos, 60);
+            text(emailId, dPos, 100);
+            text(faxNum, dPos, 140);
             text("11710 Plaza America Drive STE", dPos, adpos);
             text("2000 Reston, VA – 20190", dPos, adpos + opSize);
-            text("www.vivid-edge.com", dPos, 200);
+            text("www.vivid-edge.com", dPos, 220);
 
             textFont(csb, 32);
             text(Ename, 32, tPos);
 
-            textFont(cr, 14);
+            textFont(cr, 16);
             text(Erole, 32, tPos + 24);
             noLoop();
         }
