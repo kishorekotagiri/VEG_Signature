@@ -33,7 +33,7 @@
                     width: 100%;
                     margin-bottom: 2em;
                     margin-top: 3em;
-                
+
                 }
 
                 .formboi input {
@@ -62,24 +62,24 @@
                     margin: auto;
                 }
             </style>
-           
-
-                <label for="name">Name</label>
-                <input type="text" name="name" id="em_name" x-model="name" size="40" @input="generateFooter($data)">
-
-                <label for="role">Designation</label>
-                <input type="text" name="role" id="em_role" x-model="role" size="40" @input="generateFooter($data)">
-
-                <label for="phone">Contact Number</label>
-                <input type="text" name="phone" id="em_phone" x-model="phone" size="40" @input="generateFooter($data)">
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="em_email" x-model="email" size="40" @input="generateFooter($data)">
 
 
+            <label for="name">Name</label>
+            <input type="text" name="name" id="em_name" x-model="name" size="40" @input="generateFooter($data)">
 
-                <button style="margin-top: 12px;" @click="downloadFooter()">Download</button>
-            
+            <label for="role">Designation</label>
+            <input type="text" name="role" id="em_role" x-model="role" size="40" @input="generateFooter($data)">
+
+            <label for="phone">Contact Number</label>
+            <input type="text" name="phone" id="em_phone" x-model="phone" size="40" @input="generateFooter($data)">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="em_email" x-model="email" size="40" @input="generateFooter($data)">
+
+
+
+            <button style="margin-top: 12px;" @click="downloadFooter()">Download</button>
+
         </div>
     </div>
 
@@ -88,10 +88,10 @@
         let opsans, cb, csb, cr;
 
         let Erole = "DESIGNATION";
-        let faxNum = "703-229-8658 (FAX)";
-        let Ename = "Name";
+        let faxNum = "703-229-8658";
+        let Ename = "Vaddempudi Ramalakshmaiah";
         let num = "12345678910";
-        let emailId = "email@vivid-edge.com"
+        let emailId = "vaddempudi.ramalakshmaiah"
 
 
 
@@ -103,7 +103,7 @@
             Ename = name;
             num = phone;
             emailId = email;
-            console.log(name);
+            // console.log(name);
             redraw();
         }
 
@@ -119,25 +119,29 @@
             cb = loadFont('./res/cb.otf');
             csb = loadFont('./res/csb.otf');
             cr = loadFont('./res/cr.otf');
-            opsans = loadFont('./res/os.ttf')
+            opsans = loadFont('./res/osm.ttf')
 
 
         }
 
         function setup() {
             // setAttributes('antialias', true);
+            pixelDensity(2);
             let canvas = createCanvas(700, 260);
         }
 
         // VALUES
-        const adpos = 175;
-        const opSize = 14;
-        const iPos = 380;
-        const iPosY = 40;
+        const iSize = 30;
+        const adpos = 172;
+        const opSize = 18;
+        const iPos = 40;
+        const iPosY = 38;
         const dPos = iPos + 40;
-        const tPos = 70;
+        // tPos old 70
+        const tPos = 60;
+        let rgap = 1;
 
-
+        let eoffy = 0;
         function downloadFooter() {
 
             saveCanvas(canvas, Ename + ' VEC_footer', 'jpg');
@@ -149,28 +153,51 @@
 
             // translate(-width/2,-height/2);
             image(bg, 0, 0, 900, 262);
-            image(phone, iPos, iPosY, 30, 30);
-            image(email, iPos, iPosY + 40, 30, 30);
-            image(fax, iPos, iPosY + 40 * 2, 30, 30);
-            image(addy, iPos, iPosY + 40 * 3, 30, 30);
-            image(web, iPos, iPosY + 40 * 4, 30, 30);
-            image(logo, 30, 150, 280, 76);
+            image(phone, iPos, iPosY, iSize, iSize);
+            image(email, iPos, iPosY + 40, iSize, iSize);
+            image(fax, iPos, iPosY + 40 * 2, iSize, iSize);
+            image(addy, iPos, iPosY + 40 * 3, iSize, iSize);
+            image(web, iPos, iPosY + 40 * 4, iSize, iSize);
+            image(logo, 380, 150, 280, 76);
 
             fill(255);
 
-            textFont(opsans, 14);
-            text(num, dPos, 60);
-            text(emailId, dPos, 100);
-            text(faxNum, dPos, 140);
+            let emabox = opsans.textBounds(emailId + "@vivid-edge.com", dPos, 92, 14);
+
+
+            textFont(opsans, 16);
+            text(num, dPos, 56);
+            // EMAIL
+                textWrap(CHAR);
+                if (emabox.w >= 200) {
+                    text(emailId, dPos, 90);
+                    text("@vivid-edge.com", dPos, 108);
+                } else {
+                    text(emailId + "@vivid-edge.com", dPos,96);
+                }
+
+                text(faxNum, dPos, 140);
+                textWrap(WORD);
             text("11710 Plaza America Drive STE", dPos, adpos);
             text("2000 Reston, VA – 20190", dPos, adpos + opSize);
             text("www.vivid-edge.com", dPos, 220);
 
-            textFont(csb, 32);
-            text(Ename, 32, tPos);
 
-            textFont(cr, 16);
-            text(Erole, 32, tPos + 24);
+            // NAME
+            textFont(cb, 32);
+            textLeading(32);
+            text(Ename, 380, tPos, 260);
+
+            let ebox = csb.textBounds(Ename, 280, tPos, 32);
+
+            if (ebox.w >= 252) {
+                rgap = 2.5;
+            } else {
+                rgap = 1;
+            }
+
+            textFont(csb, 16);
+            text(Erole, 380, tPos + 24 * rgap);
             noLoop();
         }
 
